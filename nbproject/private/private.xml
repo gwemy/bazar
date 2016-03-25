@@ -10,8 +10,10 @@
             <file>file:/D:/XAMPP/htdocs/bazar/controleur/test_dao_controleur.php</file>
             <file>file:/D:/XAMPP/htdocs/bazar/vue/administration/admin_header.php</file>
             <file>file:/D:/XAMPP/htdocs/bazar/vue/js/test.js</file>
+            <file>file:/D:/XAMPP/htdocs/bazar/vue/administration/chiffre_affaire_image.php</file>
             <file>file:/D:/XAMPP/htdocs/bazar/vue/administration/chiffre_affaire.php</file>
             <file>file:/D:/XAMPP/htdocs/bazar/vue/administration/stocks.php</file>
+            <file>file:/D:/XAMPP/htdocs/bazar/vue/administration/personnel.php</file>
             <file>file:/D:/XAMPP/htdocs/bazar/vue/boutique/testdao.php</file>
         </group>
     </open-files>

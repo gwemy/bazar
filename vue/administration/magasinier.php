@@ -37,7 +37,7 @@
             <h1>Gestion des stocks et des invendus</h1>
             <a href = "index.php"><button>← retour à la boutique</button></a>
             <br/><br/>
-            <table id = "table_articles_magasinier">
+            <table id="table_articles_magasinier">
                 <thead>
                     <tr>
                         <th>Référence</th>
@@ -97,7 +97,7 @@
                                 <form method="post" action="index.php?page=magasinier&accreditation=magasinier">
                                     <input name="action" type="hidden" value="update"/>
                                     <input name="id" type="hidden" value="<?php echo $article->getArticle_id(); ?>"/>
-                                    <input name="quantite" type="number"/>
+                                    <input name="quantite" type="number" min="0"/>
                                     <input type="submit" value="ajouter"/>
                                 </form>
                             </td>

@@ -1,4 +1,5 @@
 <?php if (isset($_SESSION['statusConnexion']) AND $_SESSION['statusConnexion'] == 'administrateur') { ?>
+<h2>Gestion des clients</h2>
     <table id="table_clients">
         <thead>
             <tr>
