@@ -46,7 +46,7 @@ class ContenuDAO extends DAO {
     /**
      * @param Contenu $objet
      */
-    public function insertObjet($objet) {
+    public static function insertObjet($objet) {
         global $bdd;
         $nomTable = ContenuDAO::$nomTable;
         $colonnes = 'commande_id, article_id, article_quantite, contenu_prix';
@@ -59,11 +59,11 @@ class ContenuDAO extends DAO {
         return '[Succès : ' . $req->execute() . '] [Lignes inserées : ' . $req->rowCount() . ']';
     }
 
-    public function updateObjet($objet) {
+    public static function updateObjet($objet) {
         
     }
 
-    public function deleteObjet($filtre) {
+    public static function deleteObjet($filtre) {
         global $bdd;
         $nomTable = ContenuDAO::$nomTable;
 

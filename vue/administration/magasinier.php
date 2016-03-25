@@ -12,11 +12,9 @@
                     border: 1px dotted black;
                     padding: 2px 10px;
                 }
-
                 table {
                     border-collapse: collapse;
                 }
-
                 .align_right {
                     text-align: right;
                 }
@@ -31,11 +29,20 @@
                 .align_center{
                     text-align: center;
                 }
+                a{
+                    font-size: 0.8em;
+                    border: 1px solid grey;
+                    text-decoration: none;
+                    padding: 5px;
+                    color: black;
+                    background-color: #cccccc;
+                    font-family: sans-serif;
+                }
             </style>
         </head>
         <body>
             <h1>Gestion des stocks et des invendus</h1>
-            <a href = "index.php"><button>← retour à la boutique</button></a>
+            <a href = "index.php">← retour à la boutique</a>
             <br/><br/>
             <table id="table_articles_magasinier">
                 <thead>
@@ -90,11 +97,15 @@
                             </td>
                             <td>
                                 <?php if (Services::getInvendu($article->getArticle_id())) { ?>
-                                    <a href="index.php?page=magasinier&accreditation=magasinier&action=supprimer&id=<?php echo $article->getArticle_id(); ?>"><button>supprimer</button></a>
+                                    <form method="POST" action="index.php?page=magasinier">
+                                        <input name="action" type="hidden" value="supprimer"/>
+                                        <input name="id" type="hidden" value="<?php echo $article->getArticle_id(); ?>"/>
+                                        <input type="submit" value="supprimer"/>
+                                    </form>
                                 <?php } ?>
                             </td>
                             <td>
-                                <form method="post" action="index.php?page=magasinier&accreditation=magasinier">
+                                <form method="POST" action="index.php?page=magasinier">
                                     <input name="action" type="hidden" value="update"/>
                                     <input name="id" type="hidden" value="<?php echo $article->getArticle_id(); ?>"/>
                                     <input name="quantite" type="number" min="0"/>
@@ -107,4 +118,5 @@
             </table>
         </body>
     </html>
-<?php } ?>
+    <?php
+}
