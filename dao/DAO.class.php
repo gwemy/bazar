@@ -4,9 +4,9 @@ abstract class DAO {
 
     abstract static function getobjet($offset, $filtre);
 
-    abstract function insertObjet($objet);
+    abstract static function insertObjet($objet);
 
-    abstract function updateObjet($objet);
+    abstract static function updateObjet($objet);
 
-    abstract function deleteObjet($filtre);
+    abstract static function deleteObjet($filtre);
 }

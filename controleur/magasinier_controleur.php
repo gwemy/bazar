@@ -18,4 +18,5 @@ if (isset($_SESSION['statusConnexion']) AND $_SESSION['statusConnexion'] == 'mag
 } else {
     ?>
     ⨂ Erreur : vous n'êtes pas authentifié.
-<?php } ?>
+    <?php
+}

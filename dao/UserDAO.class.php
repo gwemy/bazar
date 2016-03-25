@@ -38,19 +38,19 @@ class UserDAO extends DAO {
         }
     }
 
-    public function insertObjet($objet) {
+    public static function insertObjet($objet) {
         
     }
 
-    public function updateObjet($objet) {
+    public static function updateObjet($objet) {
         
     }
 
-    public function deleteObjet($filtre) {
+    public static function deleteObjet($filtre) {
         
     }
 
-    public function connexion($login) {
+    public static function connexion($login) {
         global $bdd;
 
         $req = $bdd->prepare('CALL ps_log_in(:login,@retour)');
@@ -64,7 +64,7 @@ class UserDAO extends DAO {
         return $retour[0];
     }
 
-    public function inscription($login, $pass) {
+    public static function inscription($login, $pass) {
         global $bdd;
         $req = $bdd->prepare('CALL ps_ajouter_user(:login, :pass, @retour)');
         $req->bindParam(':login', $login, PDO::PARAM_STR);
@@ -81,7 +81,7 @@ class UserDAO extends DAO {
         }
     }
 
-    public function sendLoginGetHash($login) {
+    public static function sendLoginGetHash($login) {
         global $bdd;
         $req = $bdd->prepare('CALL ps_sendLoginGetHash(:login, @hash)');
         $req->bindParam(':login', $login, PDO::PARAM_STR);

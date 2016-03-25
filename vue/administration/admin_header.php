@@ -11,11 +11,9 @@
                     border: 1px dotted black;
                     padding: 2px 10px;
                 }
-
                 table {
                     border-collapse: collapse;
                 }
-
                 .align_right {
                     text-align: right;
                 }
@@ -33,16 +31,25 @@
                 #div_chiffre_affaire{
                     overflow: auto;
                 }
+                a{
+                    font-size: 0.8em;
+                    border: 1px solid grey;
+                    text-decoration: none;
+                    padding: 5px;
+                    color: black;
+                    background-color: #cccccc;
+                    font-family: sans-serif;
+                }
             </style>
         </head>
         <body>
             <h1>Administration</h1>
-            <a href="index.php"><button>← retour à la boutique</button></a>
-            <a href="index.php?page=admin&action=stocks"><button>État des stocks</button></a>
-            <a href="index.php?page=admin&action=clients"><button>Gestion des clients</button></a>
-            <a href="index.php?page=admin&action=commandes"><button>Liste des commandes</button></a>
-            <a href="index.php?page=admin&action=affaire"><button>Chiffre d'affaire</button></a>
-            <a href="index.php?page=admin&action=personnel"><button>Gestion du personnel</button></a>
+            <a href="index.php">← retour à la boutique</a>
+            <a href="index.php?page=admin&action=stocks">État des stocks</a>
+            <a href="index.php?page=admin&action=clients">Gestion des clients</a>
+            <a href="index.php?page=admin&action=commandes">Liste des commandes</a>
+            <a href="index.php?page=admin&action=affaire">Chiffre d'affaire</a>
+            <a href="index.php?page=admin&action=personnel">Gestion du personnel</a>
             <br/><br/>
             <?php
         }

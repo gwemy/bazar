@@ -47,7 +47,7 @@ class CommandeDAO extends DAO {
     /**
      * @param Commande $objet
      */
-    public function insertObjet($objet) {
+    public static function insertObjet($objet) {
         global $bdd;
         $nomTable = CommandeDAO::$nomTable;
         $colonnes = 'commande_prix, commande_contenu, user_id';
@@ -60,11 +60,11 @@ class CommandeDAO extends DAO {
         return '[Succès : ' . $req->execute() . '] [Lignes inserées : ' . $req->rowCount() . ']';
     }
 
-    public function updateObjet($objet) {
+    public static function updateObjet($objet) {
         
     }
 
-    public function deleteObjet($filtre) {
+    public static function deleteObjet($filtre) {
         
     }
 

@@ -40,11 +40,11 @@ class ArticleDAO extends DAO {
         }
     }
 
-    public function insertObjet($objet) {
+    public static function insertObjet($objet) {
         
     }
 
-    public function updateObjet($objet) {
+    public static function updateObjet($objet) {
         global $bdd;
         $nomTable            = ArticleDAO::$nomTable;
         $valeurs             = 'article_nom = \'' . $objet->getArticle_nom() . '\', article_prix = ' . $objet->getArticle_prix() . ', article_type = \'' . $objet->getArticle_type() . '\', fournisseur_nom = \'' . $objet->getFournisseur_nom() . '\', article_stock = ' . $objet->getArticle_stock() . ', article_dispo = ' . $objet->getArticle_dispo();
@@ -60,7 +60,7 @@ class ArticleDAO extends DAO {
         return '[Succès : ' . $req->execute() . '] [Lignes mises à jour : ' . $req->rowCount() . ']';
     }
 
-    public function deleteObjet($filtre) {
+    public static function deleteObjet($filtre) {
         global $bdd;
         $nomTable = ArticleDAO::$nomTable;
 
