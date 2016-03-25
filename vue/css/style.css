@@ -1,0 +1,350 @@
+@font-face {
+    font-family: 'bebas_neue_regularregular';
+    src: url('../polices/bebasneue_regular-webfont.eot');
+    src: url('../polices/bebasneue_regular-webfont.eot?#iefix')
+        format('embedded-opentype'),
+        url('../polices/bebasneue_regular-webfont.woff2') format('woff2'),
+        url('../polices/bebasneue_regular-webfont.woff') format('woff'),
+        url('../polices/bebasneue_regular-webfont.ttf') format('truetype'),
+        url('../polices/bebasneue_regular-webfont.svg#bebas_neue_regularregular')
+        format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotocondensed';
+    src: url('../polices/roboto-condensed-webfont.eot');
+    src: url('../polices/roboto-condensed-webfont.eot?#iefix')
+        format('embedded-opentype'),
+        url('../polices/roboto-condensed-webfont.woff2') format('woff2'),
+        url('../polices/roboto-condensed-webfont.woff') format('woff'),
+        url('../polices/roboto-condensed-webfont.ttf') format('truetype'),
+        url('../polices/roboto-condensed-webfont.svg#robotocondensed')
+        format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "robotocondensed";
+}
+
+body {
+    margin: 0;
+}
+
+#fixedHeader{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+pre{
+    font-family: 'Consolas';
+    background-color: black;
+    margin: 10px;
+    flex: 1;
+    font-size: 0.8em;
+}
+
+#mainWrapper {
+    background-color: white;
+}
+
+header h1 {
+    display: flex;
+    padding: 0 10px;
+    background-color: black;
+    color: white;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+}
+
+header h1 i, header h1 span {
+    padding: 10px 10px;
+    font-family: 'bebas_neue_regularregular';
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+}
+
+#titre {
+    padding: 0 10px;
+    cursor: default;
+}
+
+#swordsBabySwords {
+    color: red;
+}
+
+#quantite_panier{
+    color: white;
+    font-size: 0.7em;
+}
+
+#menu_option_texte{
+    color: #3399ff;
+}
+
+#nombre_articles_panier{
+    padding: 0 5px;
+    margin: 0 0 0 -5px;
+    font-size: 0.7em;
+    background-color: #3399ff;
+    color: white;
+}
+
+#nombre_articles_panier:empty{
+    display: none;
+}
+
+.boutonHeader, .boutonHeaderNoDiv {
+    background-color: black;
+    color: #3399ff;
+    border: none;
+}
+
+.boutonHeader:hover, .boutonHeaderNoDiv:hover {
+    background-color: white;
+    color: #3399ff;
+    cursor: pointer;
+}
+
+.deroulant {
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 10px;
+    background-color: #3399ff;
+    color: white;
+    /*animation-name: mymove;
+    animation-duration: 0.2s;*/
+    box-shadow: 0 5px 15px #0069d1;
+    /*border-bottom: 5px solid white;*/
+    justify-content: flex-start;
+    max-height: 75%;
+}
+
+#div_connexion form, #div_inscription form{
+    display: flex;
+}
+
+#panierVide {
+    font-size: 1.7em;
+}
+
+@keyframes mymove {
+    from {
+        opacity: 0;
+        transform-origin: 0 0;
+        transform: scale(1, 0);
+    }
+    to {
+        opacity: 1;
+        transform-origin: 0 0;
+        transform: scale(1, 1);
+    }
+}
+
+#boutons {
+    display: flex;
+    flex-direction: column;
+}
+
+.hoverable, .nothoverable {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.hoverable:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #3399ff;
+}
+
+.nothoverable:hover {
+    cursor: no-drop;
+    background-color: red;
+    color: white;
+}
+
+.bouton_categorie_hoverable {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+#div_connexion div label, #div_connexion div input, #div_inscription div label, #div_inscription div input, #div_recherche div input, #div_recherche div label {
+    border: none;
+    padding: 10px;
+    outline: none;
+}
+
+#div_connexion div input, #div_inscription div input, #div_recherche div input {
+    flex: 1;
+    color: black;
+}
+
+#div_connexion div label, #div_inscription div label, #div_recherche div label {
+    background-color: black;
+}
+
+#div_connexion div, #div_inscription div, #div_recherche div {
+    display: flex;
+    margin: 10px;
+}
+
+#div_compte{
+    flex-direction: column;
+}
+
+.div_bouton_categorie{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    outline: none;
+    display: flex;
+    border: 1px dotted black;
+    color: white;
+    background-color: black;
+}
+
+th {
+    color: #3399ff;
+}
+
+#table_panier tr{
+    background-color: black;
+}
+
+td, th {
+    border: 1px solid #3399ff;
+    padding: 2px 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tfoot td {
+    color: #3399ff;
+    text-align: right;
+}
+
+.td_contenu{
+    width: 50%;
+}
+
+.money {
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+#table_commandes tr{
+    background-color: black;
+}
+
+#table_commandes tbody tr:hover{
+    background-color: white;
+    color: #3399ff;
+    cursor: pointer;
+}
+
+#table_une_commande tr{
+    background-color: black;
+}
+
+.article, .article_rupture {
+    padding: 5px 5px;
+    font-size: 1.3em;
+    margin: 10px;
+    color: white;
+    box-shadow: 0px 0px 20px #3399ff;
+    width: 28%;
+}
+
+.article{
+    background-color: #3399ff;
+}
+
+.article_rupture{
+    background-color: darkgrey;
+    box-shadow: 0px 0px 20px darkgrey;
+}
+
+.ajouter, .article select  {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 0.7em;
+}
+
+.ajouter:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #3399ff;
+}
+
+.rupture {
+    background-color: grey;
+    border: none;
+    outline: none;
+    font-size: 0.7em;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto auto;
+}
+
+section em {
+    color: black;
+}
+
+input[type=radio]:not(old){
+    width     : 0;
+    margin    : 0;
+    padding   : 0;
+    opacity   : 0;
+}
+
+#champ_recherche_div{
+    flex: 3;
+}
+
+.article_mag_rupture{
+    background-color: red;
+    color: white;
+}
