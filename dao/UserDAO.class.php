@@ -43,7 +43,20 @@ class UserDAO extends DAO {
     }
 
     public static function updateObjet($objet) {
-        
+        global $bdd;
+        $nomTable            = UserDAO::$nomTable;
+        $valeurs             = 'user_login = \'' . $objet->getUser_login() . '\', user_actif = ' . $objet->getUser_actif() . ', user_status = \'' . $objet->getUser_status() . '\', user_pass = \'' . $objet->getUser_pass() . '\'';
+        //$valeurs             = 'article_nom = \'' . $objet->getArticle_nom() . '\', article_prix = ' . $objet->getArticle_prix() . ', article_type = \'' . $objet->getArticle_type() . '\', fournisseur_nom = \'' . $objet->getFournisseur_nom() . '\', article_stock = ' . $objet->getArticle_stock() . ', article_dispo = ' . $objet->getArticle_dispo();
+        $filtre              = 'user_id = ' . $objet->getUser_id();
+        $_SESSION['wat3']    = $objet;
+        $_SESSION['valeurs'] = $valeurs;
+
+        $req = $bdd->prepare('CALL ps_update(:nom_table, :valeurs, :filtre)');
+        $req->bindParam(':nom_table', $nomTable, PDO::PARAM_STR);
+        $req->bindParam(':valeurs', $valeurs, PDO::PARAM_STR);
+        $req->bindParam(':filtre', $filtre, PDO::PARAM_STR);
+
+        return '[Succès : ' . $req->execute() . '] [Lignes mises à jour : ' . $req->rowCount() . ']';
     }
 
     public static function deleteObjet($filtre) {

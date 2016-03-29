@@ -1,3 +1,4 @@
+/*------------------------------------------- POLICES -------------------------------------------*/
 @font-face {
     font-family: 'bebas_neue_regularregular';
     src: url('../polices/bebasneue_regular-webfont.eot');
@@ -26,14 +27,17 @@
     font-style: normal;
 }
 
+/*------------------------------------------- GENERAL -------------------------------------------*/
 * {
     font-family: "robotocondensed";
 }
 
 body {
     margin: 0;
+    overflow: hidden;
 }
 
+/*------------------------------------------- HEADER -------------------------------------------*/
 #fixedHeader{
     position: fixed;
     left: 0;
@@ -41,7 +45,16 @@ body {
     top: 0;
 }
 
-pre{
+#panneaux_deroulants{
+    max-height: 25%;
+    overflow: auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    box-shadow: 0 5px 15px -5px #0069d1;
+}
+
+pre {
     font-family: 'Consolas';
     background-color: black;
     margin: 10px;
@@ -51,6 +64,7 @@ pre{
 
 #mainWrapper {
     background-color: white;
+    overflow: auto;
 }
 
 header h1 {
@@ -122,12 +136,8 @@ header h1 i, header h1 span {
     padding: 10px;
     background-color: #3399ff;
     color: white;
-    /*animation-name: mymove;
-    animation-duration: 0.2s;*/
-    box-shadow: 0 5px 15px #0069d1;
-    /*border-bottom: 5px solid white;*/
+
     justify-content: flex-start;
-    max-height: 75%;
 }
 
 #div_connexion form, #div_inscription form{
@@ -136,19 +146,6 @@ header h1 i, header h1 span {
 
 #panierVide {
     font-size: 1.7em;
-}
-
-@keyframes mymove {
-    from {
-        opacity: 0;
-        transform-origin: 0 0;
-        transform: scale(1, 0);
-    }
-    to {
-        opacity: 1;
-        transform-origin: 0 0;
-        transform: scale(1, 1);
-    }
 }
 
 #boutons {
@@ -233,7 +230,7 @@ header h1 i, header h1 span {
     color: white;
     background-color: black;
 }
-
+/*------------------------------------------- TABLEAUX -------------------------------------------*/
 th {
     color: #3399ff;
 }
@@ -282,6 +279,7 @@ tfoot td {
     background-color: black;
 }
 
+/*------------------------------------------- SECTION PRINCIPALE -------------------------------------------*/
 .article, .article_rupture {
     padding: 5px 5px;
     font-size: 1.3em;
@@ -331,13 +329,6 @@ section {
 
 section em {
     color: black;
-}
-
-input[type=radio]:not(old){
-    width     : 0;
-    margin    : 0;
-    padding   : 0;
-    opacity   : 0;
 }
 
 #champ_recherche_div{

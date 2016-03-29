@@ -1,12 +1,28 @@
 <?php
 if (isset($_SESSION['statusConnexion']) AND $_SESSION['statusConnexion'] == 'administrateur') {
     include_once 'vue/administration/admin_header.php';
-    switch (filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING)) {
+    switch (filter_input(INPUT_GET, 'section', FILTER_SANITIZE_STRING)) {
         case 'stocks':
-            $articles          = Services::afficherArticles('', '');
+            $articles = Services::afficherArticles('', '');
             include_once 'vue/administration/stocks.php';
             break;
         case 'clients':
+            if (filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) !== null) {
+                switch (filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING)) {
+                    case 'bloquer':
+                        $id                          = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+                        $user                        = Services::sendUserIdGetUser($id);
+                        $user->setUser_actif('FALSE');
+                        $_SESSION['succes_bloquage'] = Services::updateUser($user);
+                        break;
+                    case 'debloquer':
+                        $id                          = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+                        $user                        = Services::sendUserIdGetUser($id);
+                        $user->setUser_actif('TRUE');
+                        $_SESSION['succes_bloquage'] = Services::updateUser($user);
+                        break;
+                }
+            }
             $users             = Services::afficherUsers();
             include_once 'vue/administration/clients.php';
             break;
@@ -21,7 +37,14 @@ if (isset($_SESSION['statusConnexion']) AND $_SESSION['statusConnexion'] == 'adm
             include_once 'vue/administration/chiffre_affaire.php';
             break;
         case 'personnel':
-            $users             = Services::afficherUsers();
+            if (filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) == 'status') {
+                $id     = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+                $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
+                $user   = Services::sendUserIdGetUser($id);
+                $user->setUser_status($status);
+                Services::updateUser($user);
+            }
+            $users = Services::afficherUsers();
             include_once 'vue/administration/personnel.php';
             break;
         default:

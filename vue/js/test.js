@@ -1,11 +1,36 @@
-window.onload = initHeader(0);
+/*window.onload = initialiser_hauteur_section();
+ window.onload = initialiser_hauteur_panel();*/
 
-//décaler verticalement le header pour qu'il ne cache pas la div du catalogue
-function initHeader(duree) {
-    var height = $('#fixedHeader').outerHeight();
+$(window).load(function () {
+    initialiser_hauteur_section();
+    initialiser_hauteur_panel();
+});
+
+//décaler verticalement la section principale pour qu'elle ne soit pas masquée par le header
+function initialiser_hauteur_section() {
+    var margin = $('#fixedHeader').height();
+    var height = $(window).height() - margin;
+    $('#mainWrapper').css({
+        'margin-top': margin + 'px'
+    });
+    $('#mainWrapper').height(height);
+}
+
+//détermine la hauteur de la div des panneaux déroulants par rapport au header
+function initialiser_hauteur_panel() {
+    var height = $('#fixedHeader').height();
+    $('#panneaux_deroulants').css({
+        'top': height + 'px'
+    });
+}
+
+function changer_hauteur_section(duree) {
+    var margin = $('#fixedHeader').height() + $('#panneaux_deroulants').height();
+    var height = $(window).height() - margin;
     $('#mainWrapper').animate({
-        'margin-top': height + 'px'
+        'margin-top': margin + 'px'
     }, duree);
+    $('#mainWrapper').height(height);
 }
 
 $('body').on('click', '.ajouter', function (e) {
@@ -35,12 +60,12 @@ $('body').on('click', '.boutonHeader', function (e) {
         $(div).slideDown({duration: 200, start: function () {
                 $(div).css({'display': 'flex'});
             }, complete: function () {
-                initHeader(200);
+                changer_hauteur_section(200);
             }});
     } else {
         $('#nombre_articles_panier').css({'background-color': '', 'color': ''});
         $(div).slideUp({duration: 200, complete: function () {
-                initHeader(200);
+                changer_hauteur_section(200);
             }});
         $(bouton).css({'background-color': '', 'color': ''});
     }
@@ -120,7 +145,7 @@ function initPanier() {
         $('#finaliser').removeClass('hoverable');
         $('#finaliser').html('Connectez-vous<br/>pour commander');
     }
-    initHeader(200);
+    changer_hauteur_section(200);
 }
 
 function resultatRecherche(recherche, type) {

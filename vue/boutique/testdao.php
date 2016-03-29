@@ -9,7 +9,6 @@
     </head>
     <body id="body">
         <div id="fixedHeader">
-            <div id="test"></div>
             <header>
                 <h1>
                     <span id="titre"><span id="swordsBabySwords">⚔</span>Le Bazar de l'Aventurier</span>
@@ -38,6 +37,8 @@
                     <span id="menu_option_texte"> </span>
                 </h1>
             </header>
+        </div>
+        <div id="panneaux_deroulants">
             <div id="div_deconnexion" class="deroulant">
                 <span class="hoverable" id="bouton_deconnexion">Confirmer la déconnexion (votre panier sera perdu)</span>
             </div>
@@ -48,7 +49,7 @@
             <div id="div_recherche" class="deroulant">
                 <div id="champ_recherche_div">
                     <label for="champ_recherche">Recherche</label>
-                    <input name="recherche" id="champ_recherche" type="text" placeholder="article dont le nom contient..."/>
+                    <input name="recherche" id="champ_recherche" type="text" placeholder="d'un article dont le nom contient..."/>
                 </div>
                 <span id="bouton_categorie_" class="bouton_categorie hoverable">Toutes catégories</span>
                 <span id="bouton_categorie_Arme" class="bouton_categorie hoverable">Armes</span>
