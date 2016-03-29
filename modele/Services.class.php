@@ -104,6 +104,10 @@ class Services {
         return ArticleDAO::updateObjet($objet);
     }
 
+    static function updateUser($objet) {
+        return UserDAO::updateObjet($objet);
+    }
+
     static function connexion($nom) {
         $retour = UserDAO::connexion($nom);
         return $retour;
@@ -115,20 +119,23 @@ class Services {
         return $id;
     }
 
+    static function sendUserIdGetUser($id) {
+        $filtre = 'user_id = ' . $id;
+        return UserDAO::getobjet(0, $filtre);
+    }
+
     static function finaliserCommande() {
         $erreur = 'Erreur de finalisation de la commande.';
         if (empty($_SESSION['panier'])) {
             $erreur = '⚠ Panier vide.';
         } else {
-            $commandeDAO = new CommandeDAO();
-            $contenuDAO  = new ContenuDAO();
-            $erreur      = 'Commande : ' . $commandeDAO->insertObjet(new Commande(0, $_SESSION['total'], null, null, $_SESSION['currentUserID']));
+            $erreur = 'Commande : ' . CommandeDAO::insertObjet(new Commande(0, $_SESSION['total'], null, null, $_SESSION['currentUserID']));
             for ($i = 0; $i < sizeof($_SESSION['panier']); $i++) {
                 $commande_id      = Services::getLastID();
                 $article_id       = $_SESSION['panier'][$i]->getArticle_id();
                 $article_quantite = $_SESSION['panier'][$i]->getArticle_quantite();
                 $contenu_prix     = $_SESSION['panier'][$i]->getContenu_prix();
-                $erreur           = $erreur . '<br/>' . 'Contenu (' . ($i + 1) . ') : ' . $contenuDAO->insertObjet(new Contenu($commande_id, $article_id, $article_quantite, $contenu_prix));
+                $erreur           = $erreur . '<br/>' . 'Contenu (' . ($i + 1) . ') : ' . ContenuDAO::insertObjet(new Contenu($commande_id, $article_id, $article_quantite, $contenu_prix));
             }
             $erreur = $erreur . '<br/>' . 'Nettoyage : ' . Services::supprimerContenu('commande_id = LAST_INSERT_ID() AND article_quantite = 0');
             $erreur = $erreur . '<br/>' . 'Concaténation : ' . Services::concatArticles();

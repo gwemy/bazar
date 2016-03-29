@@ -1,0 +1,11 @@
+USE bazaar;
+DELIMITER $$
+
+CREATE FUNCTION fn_somme_commande ()
+RETURNS FLOAT
+BEGIN
+	
+END;
+$$
+
+DELIMITER ;
