@@ -7,7 +7,7 @@ class Connexion_sql {
     private static $username = 'root';
     private static $password = 'dl10';
 
-    function getConnexion() {
+    static function getConnexion() {
         $host     = Connexion_sql::$host;
         $dbname   = Connexion_sql::$dbname;
         $username = Connexion_sql::$username;
