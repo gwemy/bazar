@@ -76,6 +76,7 @@ switch (filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING)) {
 		for ($i = 0; $i < sizeof($_SESSION['panier']); $i++) {
 			$_SESSION['total'] += $_SESSION['panier'][$i]->getContenu_prix();
 		}
+		echo 'Article ajouté.';
 		break;
 	case 'vider':
 		Services::viderPanier();
@@ -83,6 +84,7 @@ switch (filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING)) {
 		break;
 	case 'finaliser':
 		$_SESSION['message'] = Services::finaliserCommande();
+		afficherCatalogue();
 		break;
 	case 'inscrire':
 		$login				 = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
@@ -127,17 +129,7 @@ switch (filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING)) {
 }
 
 function afficherCatalogue() {
-	if (filter_input(INPUT_POST, 'recherche', FILTER_SANITIZE_STRING) !== null) {
-		$recherche = filter_input(INPUT_POST, 'recherche', FILTER_SANITIZE_STRING);
-	} else {
-		$recherche = '';
-	}
-	if (filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING) !== null) {
-		$type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
-	} else {
-		$type = '';
-	}
-	$articles = Services::afficherArticles($recherche, $type);
+	$articles = Services::afficherArticles('', '');
 
 	include_once 'vue/boutique/testdao.php';
 }

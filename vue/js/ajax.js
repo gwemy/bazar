@@ -43,8 +43,7 @@ function execute(cible, url, data, reload, panier) {
 				execute('div_panier', 'index.php', 'action=panier');
 			}
 			if (data === 'action=deconnecter') {
-				initialiser_hauteur_section();
-				initialiser_hauteur_panel();
+				initialiser_hauteur();
 				changer_hauteur_section(0);
 			}
 		}

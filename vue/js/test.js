@@ -1,27 +1,28 @@
-/*window.onload = initialiser_hauteur_section();
- window.onload = initialiser_hauteur_panel();*/
+var duree = 200;
 
 $(window).load(function () {
-	initialiser_hauteur_section();
-	initialiser_hauteur_panel();
+	initialiser_hauteur();
+});
+
+$(document).ready(function () {
+	$('#retour').bind('DOMNodeInserted DOMSubtreeModified DOMNodeRemoved', function (e) {
+		console.log('Changed');
+	});
 });
 
 //décaler verticalement la section principale pour qu'elle ne soit pas masquée par le header
-function initialiser_hauteur_section() {
+function initialiser_hauteur() {
 	var margin = $('#fixedHeader').height();
 	var height = $(window).height() - margin;
+	$('#panneaux_deroulants').css({
+		'top': margin + 'px'
+	});
 	$('#mainWrapper').css({
 		'margin-top': margin + 'px'
 	});
 	$('#mainWrapper').height(height);
-}
-
-//détermine la hauteur de la div des panneaux déroulants par rapport au header
-function initialiser_hauteur_panel() {
-	var height = $('#fixedHeader').height();
-	$('#panneaux_deroulants').css({
-		'top': height + 'px'
-	});
+	$('#retour').height(margin);
+	$('#retour_ajax').height(margin);
 }
 
 function changer_hauteur_section(duree) {
@@ -38,7 +39,19 @@ $('body').on('click', '.ajouter', function (e) {
 	var selectArticle = document.getElementById('qte' + idArticle);
 	var qteArticle = selectArticle.options[selectArticle.selectedIndex].value;
 	var prixArticle = document.getElementById('prix' + idArticle).innerHTML;
-	execute('retour', 'index.php', 'action=ajout&article_id=' + idArticle + '&article_quantite=' + qteArticle + '&article_prix=' + prixArticle, false, true);
+	$('#retour_ajax').load('index.php', {action: 'ajout', article_id: idArticle, article_quantite: qteArticle, article_prix: prixArticle}, function () {
+		updatePanier();
+		$('#retour_ajax').slideDown({
+			start: function () {
+				$('#retour_ajax').css({'display': 'flex'});
+			},
+			complete: function () {
+				setTimeout(function () {
+					$('#retour_ajax').slideUp();
+				}, 1000);
+			}
+		});
+	});
 });
 
 //gestion de l'affichage des div du header et des boutons correspondants
@@ -49,7 +62,7 @@ $('body').on('click', '.boutonHeader', function (e) {
 	var bouton = document.getElementById('bouton_afficher_' + name);
 
 	if (getComputedStyle(div).display === 'none') {
-		$('.deroulant').slideUp(200);
+		$('.deroulant').slideUp(duree);
 		$('.boutonHeader').css({'background-color': '', 'color': ''});
 		$(bouton).css({'background-color': '#3399ff', 'color': 'black'});
 		if (name === 'panier') {
@@ -57,15 +70,15 @@ $('body').on('click', '.boutonHeader', function (e) {
 		} else {
 			$('#nombre_articles_panier').css({'background-color': '', 'color': ''});
 		}
-		$(div).slideDown({duration: 200, start: function () {
+		$(div).slideDown({duration: duree, start: function () {
 				$(div).css({'display': 'flex'});
 			}, complete: function () {
-				changer_hauteur_section(200);
+				changer_hauteur_section(duree);
 			}});
 	} else {
 		$('#nombre_articles_panier').css({'background-color': '', 'color': ''});
-		$(div).slideUp({duration: 200, complete: function () {
-				changer_hauteur_section(200);
+		$(div).slideUp({duration: duree, complete: function () {
+				changer_hauteur_section(duree);
 			}});
 		$(bouton).css({'background-color': '', 'color': ''});
 	}
@@ -85,15 +98,13 @@ $('body').on('mouseleave', '.boutonHeader, .boutonHeaderNoDiv', function () {
 });
 
 $('body').on('click', '#bouton_afficher_panier', function () {
-	execute('div_panier', 'index.php', 'action=panier');
+	$('#div_panier').load('index.php', {action: 'panier'}, function () {
+		updatePanier();
+	});
 });
 
 $('body').on('click', '#bouton_afficher_compte', function () {
-	execute('div_commandes', 'index.php', 'action=compte');
-});
-
-$('body').on('click', '#bouton_deconnexion', function () {
-	execute('body', 'index.php', 'action=deconnecter');
+	$('#div_commandes').load('index.php', {action: 'compte'});
 });
 
 $('body').on('click', '#administration', function () {
@@ -126,28 +137,23 @@ $('body').on('click', '#bouton_afficher_recherche', function () {
 $('body').on('click', '.ligne_commande', function (e) {
 	id_commande = e.target.parentNode.id.substr(12);
 	console.log(id_commande);
-	execute('div_une_commande', 'index.php', 'action=commande&commande=' + id_commande);
+	$('#div_une_commande').load('index.php', {action: 'commande', commande: id_commande});
 });
 
-//rend le panier fonctionnel
-function initPanier() {
-	$('#vider').on('click', function () {
-		execute('nombre_articles_panier', 'index.php', 'action=vider', false, true);
+$('body').on('click', '#vider', function () {
+	$('#nombre_articles_panier').load('index.php', {action: 'vider'}, function () {
+		updatePanier();
 	});
-
-	if (document.getElementById('bouton_afficher_connexion') === null) {
-		$('#finaliser').on('click', function () {
-			execute('retour', 'index.php', 'action=finaliser&total=' + $('#total').html(), true, true);
-		});
-	} else {
-		$('#finaliser').css({'background-color': 'red'});
-		$('#finaliser').addClass('nothoverable');
-		$('#finaliser').removeClass('hoverable');
-		$('#finaliser').html('Connectez-vous<br/>pour commander');
-	}
-	changer_hauteur_section(200);
-}
+});
 
 function resultatRecherche(recherche, type) {
-	execute('section', 'index.php', 'action=recherche&recherche=' + recherche + '&type=' + type);
+	$('#section').load('index.php', {action: 'recherche', recherche: recherche, type: type});
+}
+
+function updatePanier() {
+	$('#div_panier').load('index.php', {action: 'panier'}, function () {
+		changer_hauteur_section(duree);
+	});
+	$('#nombre_articles_panier').load('index.php', {action: 'articles'});
+
 }

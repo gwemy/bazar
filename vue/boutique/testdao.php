@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="vue/css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="vue/css/style.css" />
 		<link rel="stylesheet" href="vue/polices/font-awesome/css/font-awesome.min.css">
+		<link rel="shortcut icon" type="image/x-icon" href="vue/favicon.ico" />
 	</head>
 	<body id="body">
 		<div id="fixedHeader">
@@ -40,7 +41,10 @@
 		</div>
 		<div id="panneaux_deroulants">
 			<div id="div_deconnexion" class="deroulant">
-				<span class="hoverable" id="bouton_deconnexion">Confirmer la déconnexion (votre panier sera perdu)</span>
+				<form action="index.php" method="post">
+					<input type="hidden" name="action" value="deconnecter"/>
+					<input class="hoverable" type="submit" value="Confirmer la déconnexion (votre panier sera perdu)"/>
+				</form>
 			</div>
 			<div id="div_compte" class="deroulant">
 				<div id="div_commandes"></div>
@@ -109,20 +113,20 @@
 			</div>
 		</div>
 		<div id="mainWrapper">
-			<div id="retour">
+			<?php if (isset($_SESSION['message'])) { ?>
+				<div id="retour">
+					<?php echo $_SESSION['message']; ?>
+				</div>
 				<?php
-				if (isset($_SESSION['message'])) {
-					echo $_SESSION['message'];
-					/* unset($_SESSION['message']); */
-				}
-				?>
-			</div>
+				unset($_SESSION['message']);
+			} else {
+				?><div id="retour"></div><?php } ?>
+			<div id="retour_ajax"></div>
 			<section id="section">
 				<?php include 'vue/boutique/catalogue.php'; ?>
 			</section>
 		</div>
 		<script src="vue/js/jquery.js"></script>
 		<script src="vue/js/test.js"></script>
-		<script src="vue/js/ajax.js"></script>
 	</body>
 </html>

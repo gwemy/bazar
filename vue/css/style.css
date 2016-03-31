@@ -46,7 +46,7 @@ body {
 }
 
 #panneaux_deroulants{
-	max-height: 25%;
+	max-height: 35%;
 	overflow: auto;
 	position: fixed;
 	left: 0;
@@ -136,7 +136,6 @@ header h1 i, header h1 span {
 	padding: 10px;
 	background-color: #3399ff;
 	color: white;
-
 	justify-content: flex-start;
 }
 
@@ -154,7 +153,6 @@ header h1 i, header h1 span {
 }
 
 .hoverable, .nothoverable {
-	flex: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -167,6 +165,10 @@ header h1 i, header h1 span {
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
+}
+
+.nothoverable{
+	background-color: red;
 }
 
 .hoverable:hover {
@@ -280,6 +282,57 @@ tfoot td {
 }
 
 /*------------------------------------------- SECTION PRINCIPALE -------------------------------------------*/
+#retour, #retour_ajax{
+	padding: 0 100px;
+	position: fixed;
+	flex-direction: row;
+	justify-content: center;
+    align-items: center;
+	top: 0;
+	right: 0;
+	background-color: #3399ff;
+	color: white;
+	white-space:nowrap;
+}
+
+#retour_ajax{
+	display: none;
+}
+
+#retour{
+	animation-name: mymove;
+    animation-duration: 5s;
+	opacity: 0;
+	display: flex;
+}
+
+@keyframes mymove{
+    from {
+        opacity: 0;
+		transform-origin: center top;
+        transform: scale(1, 0);
+    }
+    10% {
+        opacity: 1;
+		transform-origin: center top;
+        transform: scale(1, 1);
+    }
+    90% {
+        opacity: 1;
+		transform-origin: center top;
+        transform: scale(1, 1);
+    }
+    to {
+        opacity: 0;
+		transform-origin: center top;
+        transform: scale(1, 0);
+    }
+}
+
+#retour:empty, #retour_ajax:empty{
+	display: none;
+}
+
 .article, .article_rupture {
 	padding: 5px 5px;
 	font-size: 1.3em;

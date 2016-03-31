@@ -124,6 +124,11 @@ class Services {
 		return UserDAO::getobjet(0, $filtre);
 	}
 
+	static function sendArticleIdGetArticleNom($id) {
+		$filtre = 'article_id =' . $id;
+		return ArticleDAO::getObjet(0, $filtre);
+	}
+
 	static function finaliserCommande() {
 		$erreur = 'Erreur de finalisation de la commande.';
 		if (empty($_SESSION['panier'])) {
