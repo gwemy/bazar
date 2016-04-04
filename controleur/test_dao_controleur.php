@@ -76,7 +76,9 @@ switch (filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING)) {
 		for ($i = 0; $i < sizeof($_SESSION['panier']); $i++) {
 			$_SESSION['total'] += $_SESSION['panier'][$i]->getContenu_prix();
 		}
-		echo 'Article ajouté.';
+
+		$article_nom		 = Services::sendArticleIdGetArticleNom(filter_input(INPUT_POST, 'article_id', FILTER_SANITIZE_STRING));
+		echo '✔ ' . $article_nom . ' ajouté(e) au panier en ' . filter_input(INPUT_POST, 'article_quantite', FILTER_SANITIZE_STRING) . ' exemplaire(s).';
 		break;
 	case 'vider':
 		Services::viderPanier();

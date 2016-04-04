@@ -41,16 +41,24 @@ $('body').on('click', '.ajouter', function (e) {
 	var prixArticle = document.getElementById('prix' + idArticle).innerHTML;
 	$('#retour_ajax').load('index.php', {action: 'ajout', article_id: idArticle, article_quantite: qteArticle, article_prix: prixArticle}, function () {
 		updatePanier();
-		$('#retour_ajax').slideDown({
-			start: function () {
-				$('#retour_ajax').css({'display': 'flex'});
-			},
-			complete: function () {
-				setTimeout(function () {
-					$('#retour_ajax').slideUp();
-				}, 1000);
-			}
-		});
+		$('#retour_ajax').animate(
+				{
+					width: 'show',
+					paddingLeft: 'show',
+					paddingRight: 'show'},
+				{
+					start: function () {
+						$('#retour_ajax').css({'display': 'flex'});
+					},
+					complete: function () {
+						setTimeout(function () {
+							$('#retour_ajax').animate({
+								width: 'hide',
+								paddingLeft: 'hide',
+								paddingRight: 'hide'});
+						}, 2500);
+					}
+				});
 	});
 });
 

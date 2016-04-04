@@ -125,8 +125,9 @@ class Services {
 	}
 
 	static function sendArticleIdGetArticleNom($id) {
-		$filtre = 'article_id =' . $id;
-		return ArticleDAO::getObjet(0, $filtre);
+		$filtre	 = 'article_id =' . $id;
+		$article = ArticleDAO::getObjet(0, $filtre);
+		return $article->getArticle_nom();
 	}
 
 	static function finaliserCommande() {

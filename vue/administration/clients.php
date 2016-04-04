@@ -25,6 +25,7 @@
 					<?php if ($user->getUser_actif()) { ?>
 						<td class="align_center">
 							<span class="green">✓</span>
+						</td>
 						<td class="align_center">
 							<form method="POST" action="index.php?page=admin&section=clients">
 								<input type="hidden" name="action" value="bloquer"/>
@@ -35,6 +36,7 @@
 					<?php } else { ?>
 						<td class="align_center">
 							<span class="red">✗</span>
+						</td>
 						<td class="align_center">
 							<form method="POST" action="index.php?page=admin&section=clients">
 								<input type="hidden" name="action" value="debloquer"/>
@@ -43,7 +45,6 @@
 							</form>
 						</td>
 					<?php } ?>
-					</td>
 					<td>
 						<?php echo $user->getUser_status(); ?>
 					</td>
