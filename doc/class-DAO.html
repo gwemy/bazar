@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class DAO | bazar</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">bazar</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li class="active">
+<span>Class</span>					</li>
+
+					<li class="divider-vertical"></li>
+
+					<li>
+						<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+					</li>
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Article.html">Article</a></li>
+				<li><a href="class-ArticleDAO.html">ArticleDAO</a></li>
+				<li><a href="class-Commande.html">Commande</a></li>
+				<li><a href="class-CommandeDAO.html">CommandeDAO</a></li>
+				<li><a href="class-Connexion_sql.html">Connexion_sql</a></li>
+				<li><a href="class-Contenu.html">Contenu</a></li>
+				<li><a href="class-ContenuDAO.html">ContenuDAO</a></li>
+				<li class="active"><a href="class-DAO.html">DAO</a></li>
+				<li><a href="class-Fournisseur.html">Fournisseur</a></li>
+				<li><a href="class-Services.html">Services</a></li>
+				<li><a href="class-TypeArticle.html">TypeArticle</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-UserDAO.html">UserDAO</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class DAO</h1>
+
+
+
+
+
+	<div>
+		<h3>Direct known subclasses</h3>
+		<p class="elementList">
+			<code><a href="class-ArticleDAO.html">ArticleDAO</a></code>, 
+			<code><a href="class-CommandeDAO.html">CommandeDAO</a></code>, 
+			<code><a href="class-ContenuDAO.html">ContenuDAO</a></code>, 
+			<code><a href="class-UserDAO.html">UserDAO</a></code>
+		</p>
+	</div>
+
+
+
+
+
+
+	<div class="alert alert-info">
+		<b>Abstract</b><br>
+		
+		
+		
+
+			<b>Located at</b> <a href="source-class-DAO.html#3-33" title="Go to source code">dao/DAO.class.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="getObjet" id="_getObjet">
+
+			<td class="attributes"><code>
+				abstract public static
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getObjet">#</a>
+			<code><a href="source-class-DAO.html#5-11" title="Go to source code">getObjet</a>( <span>integer <var>$offset</var></span>, <span>string <var>$filtre</var></span> )</code>
+
+			<div class="description short">
+				<p>Retourne le $offset-ième objet de la table correspondant au $filtre.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Retourne le $offset-ième objet de la table correspondant au $filtre.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$offset</var></dt>
+						<dd>L'ordinal de l'objet demandé.</dd>
+						<dt><var>$filtre</var></dt>
+						<dd>Les critères de sélection de l'objet.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>Une ligne de la table sous la forme d'un objet.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="insertObjet" id="_insertObjet">
+
+			<td class="attributes"><code>
+				abstract public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_insertObjet">#</a>
+			<code><a href="source-class-DAO.html#13-18" title="Go to source code">insertObjet</a>( <span> <var>$objet</var></span> )</code>
+
+			<div class="description short">
+				<p>Insère une nouvelle ligne dans la table dont les valeurs correspondent à un objet passé en entrée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Insère une nouvelle ligne dans la table dont les valeurs correspondent à un objet passé en entrée.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$objet</var></dt>
+						<dd>objet contenant les valeurs à insérer dans la table.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="updateObjet" id="_updateObjet">
+
+			<td class="attributes"><code>
+				abstract public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_updateObjet">#</a>
+			<code><a href="source-class-DAO.html#20-25" title="Go to source code">updateObjet</a>( <span> <var>$objet</var></span> )</code>
+
+			<div class="description short">
+				<p>Met à jour une ligne de la table dont la clé primaire et les nouvelles valeurs sont contenues dans un objet.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Met à jour une ligne de la table dont la clé primaire et les nouvelles valeurs sont contenues dans un objet.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$objet</var></dt>
+						<dd>objet contenant la clé primaire de la ligne à modifier et les nouvelles valeurs à modifier.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="deleteObjet" id="_deleteObjet">
+
+			<td class="attributes"><code>
+				abstract public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_deleteObjet">#</a>
+			<code><a href="source-class-DAO.html#27-32" title="Go to source code">deleteObjet</a>( <span>string <var>$filtre</var></span> )</code>
+
+			<div class="description short">
+				<p>Supprime les lignes de la table selon le filtre passé en entrée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Supprime les lignes de la table selon le filtre passé en entrée.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$filtre</var></dt>
+						<dd>Les critères de suppression.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		bazar API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

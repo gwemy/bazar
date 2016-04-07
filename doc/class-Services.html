@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Services | bazar</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">bazar</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li class="active">
+<span>Class</span>					</li>
+
+					<li class="divider-vertical"></li>
+
+					<li>
+						<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+					</li>
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Article.html">Article</a></li>
+				<li><a href="class-ArticleDAO.html">ArticleDAO</a></li>
+				<li><a href="class-Commande.html">Commande</a></li>
+				<li><a href="class-CommandeDAO.html">CommandeDAO</a></li>
+				<li><a href="class-Connexion_sql.html">Connexion_sql</a></li>
+				<li><a href="class-Contenu.html">Contenu</a></li>
+				<li><a href="class-ContenuDAO.html">ContenuDAO</a></li>
+				<li><a href="class-DAO.html">DAO</a></li>
+				<li><a href="class-Fournisseur.html">Fournisseur</a></li>
+				<li class="active"><a href="class-Services.html">Services</a></li>
+				<li><a href="class-TypeArticle.html">TypeArticle</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-UserDAO.html">UserDAO</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Services</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		
+		
+
+			<b>Located at</b> <a href="source-class-Services.html#9-316" title="Go to source code">modele/Services.class.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="afficherArticles" id="_afficherArticles">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-Article.html">Article</a>[]</code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_afficherArticles">#</a>
+			<code><a href="source-class-Services.html#11-42" title="Go to source code">afficherArticles</a>( <span>string <var>$recherche</var></span>, <span>string <var>$type</var></span> )</code>
+
+			<div class="description short">
+				<p>Crée un array d'objets Article à partir de la bdd en fonction des paramètres de recherche passés en entrée.
+S'il n'y a aucun paramètre, l'array contiendra tous les objets de la table Article de la bdd dont la valeur 'article_dispo' est 'true'.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Crée un array d'objets Article à partir de la bdd en fonction des paramètres de recherche passés en entrée.
+S'il n'y a aucun paramètre, l'array contiendra tous les objets de la table Article de la bdd dont la valeur 'article_dispo' est 'true'.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$recherche</var></dt>
+						<dd>'article_nom' des objets Article retournés doit contenir cette chaîne de caractères.</dd>
+						<dt><var>$type</var></dt>
+						<dd>'article_type' des objets Article retournés doit être égal à ce paramètre.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Article.html">Article</a>[]</code><br>Un array d'objets Article issus de la table Article de la bdd.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="afficherArticlesAdmin" id="_afficherArticlesAdmin">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-Article.html">Article</a>[]</code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_afficherArticlesAdmin">#</a>
+			<code><a href="source-class-Services.html#44-58" title="Go to source code">afficherArticlesAdmin</a>( )</code>
+
+			<div class="description short">
+				<p>Crée un array d'objets Article à partir de la bdd. Renvoie l'intégralité de la table Article.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Crée un array d'objets Article à partir de la bdd. Renvoie l'intégralité de la table Article.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Article.html">Article</a>[]</code><br>Un array d'objets Article issus de la table Article de la bdd.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="afficherUsers" id="_afficherUsers">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-User.html">User</a>[]</code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_afficherUsers">#</a>
+			<code><a href="source-class-Services.html#60-72" title="Go to source code">afficherUsers</a>( )</code>
+
+			<div class="description short">
+				<p>Crée un array d'objets User à partir de la bdd. Renvoie l'intégralité de la table User.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Crée un array d'objets User à partir de la bdd. Renvoie l'intégralité de la table User.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-User.html">User</a>[]</code><br>Un array d'objets User issus de la table User de la bdd.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getInvendu" id="_getInvendu">
+
+			<td class="attributes"><code>
+				 public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getInvendu">#</a>
+			<code><a href="source-class-Services.html#74-90" title="Go to source code">getInvendu</a>( <span>integer <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Détermine si un article a déjà été vendu, c'est-à-dire s'il est présent dans une des commandes. Retourne 'true' si jamais vendu.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Détermine si un article a déjà été vendu, c'est-à-dire s'il est présent dans une des commandes. Retourne 'true' si jamais vendu.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd>La référence de l'article (article_id)</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>'true' si jamais  vendu, 'false' si déjà vendu au moins une fois
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="afficherCommandesUser" id="_afficherCommandesUser">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-Commande.html">Commande</a>[]</code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_afficherCommandesUser">#</a>
+			<code><a href="source-class-Services.html#92-107" title="Go to source code">afficherCommandesUser</a>( <span>integer <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Crée un array avec les objets Commande dont la valeur 'user_id' est passée en entrée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Crée un array avec les objets Commande dont la valeur 'user_id' est passée en entrée.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd>La référence du client ('user_id')</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Commande.html">Commande</a>[]</code><br>Un array d'objets Commande issus de la table Commande de la bdd.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="afficherCommandesAdmin" id="_afficherCommandesAdmin">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-Commande.html">Commande</a>[]</code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_afficherCommandesAdmin">#</a>
+			<code><a href="source-class-Services.html#109-123" title="Go to source code">afficherCommandesAdmin</a>( )</code>
+
+			<div class="description short">
+				<p>Crée un array d'objets Commande à partir de la bdd. Renvoie l'intégralité de la table Commande.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Crée un array d'objets Commande à partir de la bdd. Renvoie l'intégralité de la table Commande.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Commande.html">Commande</a>[]</code><br>Un array d'objets Commande issus de la table Commande de la bdd.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="afficherContenus" id="_afficherContenus">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-Contenu.html">Contenu</a>[]</code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_afficherContenus">#</a>
+			<code><a href="source-class-Services.html#125-140" title="Go to source code">afficherContenus</a>( <span>integer <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Crée un array avec les objets Contenu dont la valeur 'commande_id' est passée en entrée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Crée un array avec les objets Contenu dont la valeur 'commande_id' est passée en entrée.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd>La référence de la commande ('commande_id')</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Contenu.html">Contenu</a>[]</code><br>Un array d'objets Contenu issus de la table Contenu de la bdd.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="supprimerContenu" id="_supprimerContenu">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_supprimerContenu">#</a>
+			<code><a href="source-class-Services.html#142-148" title="Go to source code">supprimerContenu</a>( )</code>
+
+			<div class="description short">
+				<p>Supprime les lignes de la table Contenu dont la quantité ('article_quantite') est nulle et correspondant à la dernière commande passée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Supprime les lignes de la table Contenu dont la quantité ('article_quantite') est nulle et correspondant à la dernière commande passée.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="supprimerArticle" id="_supprimerArticle">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_supprimerArticle">#</a>
+			<code><a href="source-class-Services.html#150-158" title="Go to source code">supprimerArticle</a>( <span>integer <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Supprime une ligne de la table Article dont la référence ('article_id') est passée en entrée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Supprime une ligne de la table Article dont la référence ('article_id') est passée en entrée.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd>La référence de l'article à supprimer ('article_id').</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="updateUser" id="_updateUser">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_updateUser">#</a>
+			<code><a href="source-class-Services.html#160-167" title="Go to source code">updateUser</a>( <span><code><a href="class-User.html">User</a></code> <var>$objet</var></span> )</code>
+
+			<div class="description short">
+				<p>Met à jour les valeurs d'une ligne de la table User. La clé primaire et les nouvelles valeurs sont contenues dans l'objet passé en entrée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Met à jour les valeurs d'une ligne de la table User. La clé primaire et les nouvelles valeurs sont contenues dans l'objet passé en entrée.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$objet</var></dt>
+						<dd>Un objet User contenant la clé primaire de la ligne à modifier et les nouvelles valeurs à modifier.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="connexion" id="_connexion">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_connexion">#</a>
+			<code><a href="source-class-Services.html#169-177" title="Go to source code">connexion</a>( <span>string <var>$login</var></span> )</code>
+
+			<div class="description short">
+				<p>Prend en entrée le login de l'utilisateur et renvoie le status de cet utilisateur.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Prend en entrée le login de l'utilisateur et renvoie le status de cet utilisateur.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$login</var></dt>
+						<dd>Le login de l'utilisateur ('user_login').</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sendLoginGetID" id="_sendLoginGetID">
+
+			<td class="attributes"><code>
+				 public static
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sendLoginGetID">#</a>
+			<code><a href="source-class-Services.html#179-188" title="Go to source code">sendLoginGetID</a>( <span>string <var>$login</var></span> )</code>
+
+			<div class="description short">
+				<p>Prend le login de l'utilisateur ('user_login') en entrée et renvoie sa référence ('user_id')</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Prend le login de l'utilisateur ('user_login') en entrée et renvoie sa référence ('user_id')</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$login</var></dt>
+						<dd>Le login de l'utilisateur ('user_login').</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>La référence de l'utilisateur ('user_id').
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sendUserIdGetUser" id="_sendUserIdGetUser">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-User.html">User</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sendUserIdGetUser">#</a>
+			<code><a href="source-class-Services.html#190-198" title="Go to source code">sendUserIdGetUser</a>( <span>integer <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Prend la référence de l'utilisateur ('user_id') en entrée et renvoie la ligne du tableau correspondante sous forme d'un objet User.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Prend la référence de l'utilisateur ('user_id') en entrée et renvoie la ligne du tableau correspondante sous forme d'un objet User.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd>La référence de l'utilisateur ('user_id').</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-User.html">User</a></code><br>L'objet User dont la référence ('user_id') est passée en entrée.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sendArticleIdGetArticleNom" id="_sendArticleIdGetArticleNom">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sendArticleIdGetArticleNom">#</a>
+			<code><a href="source-class-Services.html#200-209" title="Go to source code">sendArticleIdGetArticleNom</a>( <span>type <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Prend la référence d'un article ('article_id') en entrée et renvoie son nom ('article_nom').</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Prend la référence d'un article ('article_id') en entrée et renvoie son nom ('article_nom').</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd>La référence de l'article ('article_id').</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Le nom de l'article ('article_nom') dont la référence ('article_id') est passée en entrée.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="finaliserCommande" id="_finaliserCommande">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_finaliserCommande">#</a>
+			<code><a href="source-class-Services.html#211-234" title="Go to source code">finaliserCommande</a>( )</code>
+
+			<div class="description short">
+				<p>Crée un objet Commande et copie le contenu de 'panier' contenu dans la session dans la table Contenu, puis nettoie les entrées où le stock a été insuffisant.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Crée un objet Commande et copie le contenu de 'panier' contenu dans la session dans la table Contenu, puis nettoie les entrées où le stock a été insuffisant.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getLastID" id="_getLastID">
+
+			<td class="attributes"><code>
+				 public static
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getLastID">#</a>
+			<code><a href="source-class-Services.html#236-242" title="Go to source code">getLastID</a>( )</code>
+
+			<div class="description short">
+				<p>Retourne la référence ('commande_id') de la dernière Commande créée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Retourne la référence ('commande_id') de la dernière Commande créée.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>La référence ('commande_id') de la dernière Commande créée.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="viderPanier" id="_viderPanier">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_viderPanier">#</a>
+			<code><a href="source-class-Services.html#244-249" title="Go to source code">viderPanier</a>( )</code>
+
+			<div class="description short">
+				<p>Efface le panier de la session.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Efface le panier de la session.</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="concatArticles" id="_concatArticles">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_concatArticles">#</a>
+			<code><a href="source-class-Services.html#251-257" title="Go to source code">concatArticles</a>( )</code>
+
+			<div class="description short">
+				<p>Créé une chaîne de caractères correspondant à la liste des articles d'une commande, accompagnés de leur quantité.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Créé une chaîne de caractères correspondant à la liste des articles d'une commande, accompagnés de leur quantité.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="inscription" id="_inscription">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_inscription">#</a>
+			<code><a href="source-class-Services.html#259-267" title="Go to source code">inscription</a>( <span>string <var>$login</var></span>, <span>string <var>$pass</var></span> )</code>
+
+			<div class="description short">
+				<p>Ajoute une ligne à la table User avec le login et le mot de passe passés en entrée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Ajoute une ligne à la table User avec le login et le mot de passe passés en entrée.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$login</var></dt>
+						<dd>Le login désiré par l'utilisateur.</dd>
+						<dt><var>$pass</var></dt>
+						<dd>Le mot de passe désiré par l'utilisateur. Il sera crypté par la fonction password_hash() avant d'être stocké dans la bdd.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sendLoginGetHash" id="_sendLoginGetHash">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sendLoginGetHash">#</a>
+			<code><a href="source-class-Services.html#269-276" title="Go to source code">sendLoginGetHash</a>( <span>string <var>$login</var></span> )</code>
+
+			<div class="description short">
+				<p>Prend le login d'un utilisateur ('user_login') en entrée et renvoie la version hashée de son mot de passe ('user_password').</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Prend le login d'un utilisateur ('user_login') en entrée et renvoie la version hashée de son mot de passe ('user_password').</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$login</var></dt>
+						<dd>Le login d'un utilisateur ('user_login').</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>La version hashée de son mot de passe ('user_password').
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="estSousSeuil" id="_estSousSeuil">
+
+			<td class="attributes"><code>
+				 public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_estSousSeuil">#</a>
+			<code><a href="source-class-Services.html#278-285" title="Go to source code">estSousSeuil</a>( <span>integer <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Détermine si le stock d'un article est en dessous de son seuil d'initialisation divisé par 4.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Détermine si le stock d'un article est en dessous de son seuil d'initialisation divisé par 4.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd>La référence de l'article ('article_id').</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>'true' si l'article est sous le seuil
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="majStock" id="_majStock">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_majStock">#</a>
+			<code><a href="source-class-Services.html#287-298" title="Go to source code">majStock</a>( <span>integer <var>$id</var></span>, <span>integer <var>$ajout</var></span> )</code>
+
+			<div class="description short">
+				<p>Modifie positivement le stock d'un article dont la référence est passée en entrée.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Modifie positivement le stock d'un article dont la référence est passée en entrée.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd>La référence de l'article ('article_id').</dd>
+						<dt><var>$ajout</var></dt>
+						<dd>La quantité à ajouter à l'article.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Un message de réussite ou d'erreur de l'opération.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getGainParJour" id="_getGainParJour">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getGainParJour">#</a>
+			<code><a href="source-class-Services.html#300-306" title="Go to source code">getGainParJour</a>( )</code>
+
+			<div class="description short">
+				<p>Retourne un array du chiffre d'affaire par jour.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Retourne un array du chiffre d'affaire par jour.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>Un array de deux colonnes du chiffre d'affaire par jour.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getGainMeilleurJour" id="_getGainMeilleurJour">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getGainMeilleurJour">#</a>
+			<code><a href="source-class-Services.html#308-314" title="Go to source code">getGainMeilleurJour</a>( )</code>
+
+			<div class="description short">
+				<p>Retourne la date du jour au chiffre d'affaire le plus élevé, ainsi que le chiffre d'affaire en question.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Retourne la date du jour au chiffre d'affaire le plus élevé, ainsi que le chiffre d'affaire en question.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>La date du jour au chiffre d'affaire le plus élevé, ainsi que le chiffre d'affaire en question.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		bazar API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
