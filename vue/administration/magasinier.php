@@ -28,7 +28,9 @@
 					</tr>
 				</thead>
 
-				<?php foreach ($articles as $article) {
+				<?php
+				/** @var Article $article */
+				foreach ($articles as $article) {
 					?>
 					<tbody>
 						<tr id="article_id_<?php echo $article->getArticle_id(); ?>" >
