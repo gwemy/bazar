@@ -5,7 +5,7 @@ include_once 'modele/User.class.php';
 
 class UserDAO extends DAO {
 
-	private static $nomTable = "user";
+	private static $nomTable = "USER";
 
 	/**
 	 * @return string

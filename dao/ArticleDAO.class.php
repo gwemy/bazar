@@ -5,7 +5,7 @@ include_once 'modele/Article.class.php';
 
 class ArticleDAO extends DAO {
 
-	private static $nomTable = 'article';
+	private static $nomTable = 'ARTICLE';
 
 	/**
 	 * @return string

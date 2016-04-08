@@ -44,7 +44,7 @@ switch (filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING)) {
 		include_once 'vue/boutique/main.php';
 		break;
 	case 'panier':
-		include_once $root . 'vue/boutique/panier.php';
+		include_once 'vue/boutique/panier.php';
 		break;
 	case 'ajout':
 		//vérifier si l'array 'panier' existe

@@ -5,7 +5,7 @@ include_once 'modele/Commande.class.php';
 
 class CommandeDAO extends DAO {
 
-	private static $nomTable = 'commande';
+	private static $nomTable = 'COMMANDE';
 
 	/**
 	 * @return string
